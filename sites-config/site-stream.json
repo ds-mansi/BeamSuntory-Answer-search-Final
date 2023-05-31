@@ -1,0 +1,15 @@
+{
+  "$id": "site-entity",
+  "filter": {
+    "entityIds": ["help-site-header-footer"]
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+    "id",
+    "name"
+  
+  ],
+  "localization": {
+    "locales": ["en"]
+  }
+}
