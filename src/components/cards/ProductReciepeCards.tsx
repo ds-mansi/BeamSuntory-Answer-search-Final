@@ -7,6 +7,7 @@ import { CardProps } from "../../models/cardComponent";
 // import '../../sass/style.css';
 import "../../../src/index.css";
 import Select from "react-select";
+import { useSearchState } from "@yext/search-headless-react";
 
 export interface StandardCardConfig {
   showOrdinal?: boolean;
@@ -60,7 +61,8 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
     customCssClasses,
     cssCompositionMethod
   );
-
+    const facetNames = useSearchState(state=>state);
+    console.log(facetNames,"facetNames");
   /**
    * This function limits the words
    * @param string
@@ -69,13 +71,11 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
    */
 
   const allproduct: any = result.rawData;
-  console.log(allproduct, "name");
+  
 
   return (
     <>
       <option value="product name">{allproduct.name}</option>
-      
-      
     </>
   );
 }

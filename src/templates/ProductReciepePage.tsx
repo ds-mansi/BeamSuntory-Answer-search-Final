@@ -24,6 +24,7 @@ import {
   DirectAnswer,
   LocationBias,
 } from "@yext/search-ui-react";
+import Facets from "../components/Facets";
 import VerticalResults from "../components/VerticalResults";
 import { ProductReciepeCard } from "../components/cards/ProductReciepeCards";
 import Navigation from "../components/Navigation";
@@ -82,6 +83,7 @@ const ProductReciepePage: Template<TemplateRenderProps> = ({
             <SearchBar placeholder="Search..." />
             <Navigation />
             <DirectAnswer />
+            <Facets/>
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />

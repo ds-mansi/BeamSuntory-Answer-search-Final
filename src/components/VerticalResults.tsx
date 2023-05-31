@@ -52,7 +52,7 @@ export function VerticalResultsDisplay(
     cssCompositionMethod
   );
   const key = useSearchState((state) => state.vertical.verticalKey);
-  // const taste=useSearchState(state=>state.vertical.results);
+
   if (results.length === 0) {
     return null;
   }
@@ -72,48 +72,12 @@ export function VerticalResultsDisplay(
 
   return (
     <>
-      {key === "product_reciepes" ? (
-        <select>
-          {results &&
-            results.map((result) =>
-              renderResult(CardComponent, cardConfig, result)
-            )}
-        </select>
-      ) : (
-        <div className={resultsClassNames}>
+     <div className={resultsClassNames}>
           {results &&
             results.map((result) =>
               renderResult(CardComponent, cardConfig, result)
             )}
         </div>
-      )}
-      {key === "product_reciepes" ? (
-        <select>
-          {occassiondata[0].map((t: any) => {
-            return (
-              <>
-                <option>{t.name}</option>
-              </>
-            );
-          })}
-        </select>
-      ) : (
-        ""
-      )}
-
-      {key === "product_reciepes" ? (
-        <select>
-          {taste[0].map((t: any) => {
-            return (
-              <>
-                <option>{t.name}</option>
-              </>
-            );
-          })}
-        </select>
-      ) : (
-        ""
-      )}
     </>
   );
 }
