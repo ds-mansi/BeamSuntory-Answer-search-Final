@@ -51,7 +51,7 @@ export function VerticalResultsDisplay(
     customCssClasses,
     cssCompositionMethod
   );
-  const key = useSearchState((state) => state.vertical.verticalKey);
+  // const key = useSearchState((state) => state.vertical.verticalKey);
 
   if (results.length === 0) {
     return null;
@@ -61,23 +61,14 @@ export function VerticalResultsDisplay(
     [cssClasses.results___loading ?? ""]: isLoading,
   });
 
-  const occassiondata = results?.map((t: any) => {
-    return t.rawData.c_occasionRelation;
-  });
-
-  const taste = results?.map((o: any) => {
-    return o.rawData.c_tasteRelation;
-  });
-  console.log(taste, "c_tasteRelation");
-
   return (
     <>
-     <div className={resultsClassNames}>
-          {results &&
-            results.map((result) =>
-              renderResult(CardComponent, cardConfig, result)
-            )}
-        </div>
+      <div className={resultsClassNames}>
+        {results &&
+          results.map((result) =>
+            renderResult(CardComponent, cardConfig, result)
+          )}
+      </div>
     </>
   );
 }

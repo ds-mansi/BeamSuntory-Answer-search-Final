@@ -3,9 +3,6 @@ import { ProductsCard } from "../components/cards/ProductsCard";
 import { ArticlesCard } from "../components/cards/ArticlesCard";
 import { FaqCard } from "../components/cards/FaqCards";
 import { VerticalConfig } from "../components/UniversalResults";
-import { LocationCard } from "../components/cards/LocationCard";
-import LocationSection from "../sections/LocationSection";
-import ProductsSection from "../sections/ProductSection";
 import StandardSection from "../sections/StandardSection";
 import { ProductReciepeCard } from "../components/cards/ProductReciepeCards";
 

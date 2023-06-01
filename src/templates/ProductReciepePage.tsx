@@ -32,7 +32,7 @@ import { answersHeadlessConfig } from "../config/answersHeadlessConfig";
 
 export const config: TemplateConfig = {
   stream: {
-    $id: "product",
+    $id: "product-recipe",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: ["id", "uid", "meta", "name"],
@@ -73,7 +73,7 @@ const ProductReciepePage: Template<TemplateRenderProps> = ({
   document,
 }) => {
   const { _site, id, name, } = document;
-  console.log(document,"ce_productRecipes");
+ 
   return (
     <>
       {/* <Header headerLinks={headerProps} /> */}
@@ -83,7 +83,7 @@ const ProductReciepePage: Template<TemplateRenderProps> = ({
             <SearchBar placeholder="Search..." />
             <Navigation />
             <DirectAnswer />
-            <Facets/>
+            <Facets collapsible={true}   defaultExpanded = {false} />
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />

@@ -82,10 +82,10 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
   //const productNumber = Products.heading ? Products.heading : "Product Heading"; // Name of the products
   const productName = Products.c_productCard.heading
     ? Products.c_productCard.heading
-    : "Product Name"; // Description of the Products
+    : ""; // Description of the Products
   const productDescription = Products.c_productCard.description
     ? Products.c_productCard.description
-    : "Product Description"; // Description of the Products
+    : ""; // Description of the Products
   const productImage = Products.c_productCard
     ? Products.c_productCard.image.url
     : "#";

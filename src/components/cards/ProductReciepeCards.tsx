@@ -61,8 +61,7 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
     customCssClasses,
     cssCompositionMethod
   );
-    const facetNames = useSearchState(state=>state);
-    console.log(facetNames,"facetNames");
+  const facetNames = useSearchState((state) => state);
   /**
    * This function limits the words
    * @param string
@@ -71,10 +70,11 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
    */
 
   const allproduct: any = result.rawData;
-  
+  console.log(result.rawData, "result.rawData");
 
   return (
     <>
+      <img src={allproduct.c_recipePhoto.url} />
       <option value="product name">{allproduct.name}</option>
     </>
   );

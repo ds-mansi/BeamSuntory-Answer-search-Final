@@ -1,3 +1,5 @@
+import * as React from "react";
+
 interface CheckboxOption {
   id: string,
   label: string
