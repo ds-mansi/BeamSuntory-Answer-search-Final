@@ -131,3 +131,15 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+
+
+.showMore {
+  height: 20px;
+  overflow: hidden;
+}
+
+.showLess {
+  height: unset;
+  overflow: visible;
+}

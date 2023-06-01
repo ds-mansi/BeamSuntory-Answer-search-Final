@@ -36,7 +36,6 @@ const builtInCssClasses: StandardCardCssClasses = {
   title: "font-bold ArticlesTitle",
 };
 
-
 /**
  * This Component renders the base result card.
  *
@@ -83,6 +82,39 @@ export function ArticlesCard(props: StandardCardProps): JSX.Element {
   //     setFaqClass("opened");
   //   }
   // };
+
+  // let buttonText = "Show More";
+
+  const [readMoreLess, setFilterValue] = useState("Show More");
+  const [classMoreLess, setClassValue] = useState("showMore");
+
+  const myFunction = () => {
+    if (readMoreLess == "Show More" && classMoreLess == "showMore") {
+      setFilterValue("Show Less");
+      setClassValue("showLess");
+    } else {
+      setFilterValue("Show More");
+      setClassValue("showMore");
+    }
+    // function to hide and show search section after click on search icon on header
+
+    // x = document.getElementById("hide-show");
+    // y = document.getElementById("hide");
+
+    // if (x.style.height === "140px") {
+    //   x.style.height = "57px";
+    //   buttonText = "Show More";
+    //   x.style.transitionDuration = "0.6s";
+    // } else {
+    //   x.style.height = "140px";
+    //   buttonText = "Hide";
+    //   x.style.transitionDuration = "0.6s";
+    // }
+    // // document.getElementById("hide-show").classList.toggle('open');
+
+    // y.innerText = '';
+    // y.innerHTML += buttonText;
+  };
   return (
     <>
       {/* <div className="faq-sec bg-light">
@@ -127,12 +159,14 @@ export function ArticlesCard(props: StandardCardProps): JSX.Element {
             src={ArticleImageUrl}
             style={{ height: "150px", margin: "auto" }}
           ></img>
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center" }} className={classMoreLess}>
             <p>{ArticleDescription}</p>
-            <p>
-              <a href={ArticleCard.c_articleCard.cTA.link}>{ArticleBtn}</a>
-            </p>
           </div>
+          <p style={{ textAlign: "center" }}>
+            <a href="javascript:void(0)" onClick={myFunction}>
+              {readMoreLess}
+            </a>
+          </p>
         </div>
       </div>
 
