@@ -53,37 +53,14 @@ export function ArticlesCard(props: StandardCardProps): JSX.Element {
   const ArticleImageUrl = ArticleCard.c_articleCard.image.url
     ? ArticleCard.c_articleCard.image.url
     : null;
-  const ArticleBtn = ArticleCard.c_articleCard.cTA.label
-    ? ArticleCard.c_articleCard.cTA.label
-    : null;
-  function limit(string?: string, limit = 0) {
-    return string?.substring(0, limit);
-  }
+  // const ArticleBtn = ArticleCard.c_articleCard.cTA.label
+  //   ? ArticleCard.c_articleCard.cTA.label
+  //   : null;
+  // function limit(string?: string, limit = 0) {
+  //   return string?.substring(0, limit);
+  // }
 
-  const greeting = limit(ArticleDescription, 200);
-  // console.log(greeting, "greeting");
-
-  // const [categories_data, setFaq_Data] = useState([]);
-  // const [faqClass, setFaqClass] = useState("");
-  // const [leftFaqLen, setLeftFaqLen] = useState(0);
-  // const [rightFaqLen, setRightFaqLen] = useState(0);
-  // const [selected, setselected] = useState(null);
-
-  // const isShowContent = (e: any, index: any) => {
-  //   setselected(index);
-  //   const parent = e.target.parentNode;
-  //   if (parent.classList.contains("opened")) {
-  //     setFaqClass("");
-  //   } else {
-  //     const acc = document.getElementsByClassName("faq-block");
-  //     for (let s = 0; s < acc?.length; s++) {
-  //       acc[s].classList.remove("opened");
-  //     }
-  //     setFaqClass("opened");
-  //   }
-  // };
-
-  // let buttonText = "Show More";
+  // const greeting = limit(ArticleDescription, 200);
 
   const [readMoreLess, setFilterValue] = useState("Show More");
   const [classMoreLess, setClassValue] = useState("showMore");
@@ -96,64 +73,10 @@ export function ArticlesCard(props: StandardCardProps): JSX.Element {
       setFilterValue("Show More");
       setClassValue("showMore");
     }
-    // function to hide and show search section after click on search icon on header
-
-    // x = document.getElementById("hide-show");
-    // y = document.getElementById("hide");
-
-    // if (x.style.height === "140px") {
-    //   x.style.height = "57px";
-    //   buttonText = "Show More";
-    //   x.style.transitionDuration = "0.6s";
-    // } else {
-    //   x.style.height = "140px";
-    //   buttonText = "Hide";
-    //   x.style.transitionDuration = "0.6s";
-    // }
-    // // document.getElementById("hide-show").classList.toggle('open');
-
-    // y.innerText = '';
-    // y.innerHTML += buttonText;
   };
   return (
     <>
-      {/* <div className="faq-sec bg-light">
-        <div className="container">
-          <div className="faq-blocks">
-            <div className="left-faq">
-              
-                  <div
-                    id={ArticleCard.id}
-                    className={
-                      selected == ArticleCard.id
-                        ? `faq-block ${faqClass}`
-                        : "faq-block"
-                    }
-                    key={ArticleCard.id}
-                  >
-                    <h4
-                      className="faq-title"
-                      onClick={(e) => isShowContent(e, ArticleCard.id)}
-                    >
-                      {ArticleCard.name}
-                    </h4>
-
-                    <>
-                      <div className="faq-content">
-                        {ArticleCard.body}
-                      </div>
-                    </>
-                  </div>
-                
-
-              
-            </div>
-
-          </div>
-        </div>
-      </div> */}
-
-      <div style={{ width: "50%", marginRight: "10px", display: "flex" }}>
+      <div style={{ width: "50%", marginRight: "10px" }}>
         <div className={cssClasses.container}>
           <img
             src={ArticleImageUrl}

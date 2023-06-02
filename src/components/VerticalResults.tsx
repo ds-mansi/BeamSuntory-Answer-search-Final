@@ -60,15 +60,33 @@ export function VerticalResultsDisplay(
   const resultsClassNames = classNames({
     [cssClasses.results___loading ?? ""]: isLoading,
   });
-
+  console.log(results, "results");
   return (
     <>
-      <div className={resultsClassNames}>
+      {results &&
+        results.map((i) => {
+          return (
+            <>
+              {i.entityType === "faq" ? (
+                <div className={resultsClassNames}>
+                  {renderResult(CardComponent, cardConfig, i)}
+                </div>
+              ) : (
+                <div className={resultsClassNames} style={{ display: "flex" }}>
+                  {renderResult(CardComponent, cardConfig, i)}
+                </div>
+              )}
+            </>
+          );
+        })}
+
+      {/* <div className={resultsClassNames} style={{ display: "flex" }}>
         {results &&
           results.map((result) =>
             renderResult(CardComponent, cardConfig, result)
           )}
-      </div>
+          
+      </div> */}
     </>
   );
 }
