@@ -150,7 +150,7 @@ export default function VerticalResults(
   if (verticalResults.length === 0 && displayAllOnNoResults) {
     results = allResultsForVertical;
     resultsCount = allResultsCountForVertical;
-   
+
     const filterVariable =
       aleternateVerticals?.filter(
         (filtredResulta) => filtredResulta.resultsCount > 0
