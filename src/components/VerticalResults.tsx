@@ -142,12 +142,46 @@ export default function VerticalResults(
       (state) => state.vertical?.noResults?.allResultsForVertical.resultsCount
     ) || 0;
   const isLoading = useSearchState((state) => state.searchStatus.isLoading);
-
+  const aleternateVerticals = useSearchState(
+    (state) => state.vertical.noResults?.alternativeVerticals
+  );
   let results = verticalResults;
   let resultsCount = verticalResultsCount;
   if (verticalResults.length === 0 && displayAllOnNoResults) {
     results = allResultsForVertical;
     resultsCount = allResultsCountForVertical;
+   
+    const filterVariable =
+      aleternateVerticals?.filter(
+        (filtredResulta) => filtredResulta.resultsCount > 0
+      ) || [];
+
+    const alternateVerticals =
+      filterVariable.length > 0
+        ? filterVariable.map((results: any) => {
+            console.log(results.verticalKey, "filterVariable");
+            return (
+              <>
+                <a href={`/${results.verticalKey}`}>
+                  <li>{results.verticalKey}</li>
+                </a>
+              </>
+            );
+          })
+        : null;
+
+    return (
+      <div className="noResultFound">
+        {filterVariable.length > 0 ? (
+          <div>
+            <p>No result found showing alternate vertical instead : </p>
+            <ul>{alternateVerticals}</ul>
+          </div>
+        ) : (
+          <p>No results found</p>
+        )}
+      </div>
+    );
   }
 
   return (

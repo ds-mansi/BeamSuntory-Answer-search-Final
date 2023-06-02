@@ -94,7 +94,7 @@ export default function DirectAnswer(
         )}
         {!isSnippet && link && (
           <div className={cssClasses.viewDetailsLinkContainer}>
-            <a href={link} className={cssClasses.viewDetailsLink}>
+            <a ={link} className={cssClasses.viewDetailsLink}>
               View Details
             </a>
           </div>

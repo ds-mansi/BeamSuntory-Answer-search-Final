@@ -24,7 +24,7 @@ import {
   AlternativeVerticals,
   AppliedFilters,
   DirectAnswer,
-  LocationBias
+  LocationBias,
 
 } from "@yext/search-ui-react";
 import VerticalResults from "../components/VerticalResults";
